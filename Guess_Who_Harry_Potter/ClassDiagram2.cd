@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Guess_Who_Harry_Potter.AllCar" Collapsed="true">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAABBQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AllCar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Guess_Who_Harry_Potter.AllPlayer">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AllPlayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Guess_Who_Harry_Potter.Board">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAARAEAAAAAJgACAAAAA=</HashCode>
+      <FileName>Board.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Guess_Who_Harry_Potter.Category" Collapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACgAAACAACAAAAAAAACCAAACAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Category.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Guess_Who_Harry_Potter.Cell">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAQAAAAEAAAAAAAAAAAAAAEAAAA4AFgAABAEAA=</HashCode>
+      <FileName>Cell.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Guess_Who_Harry_Potter.CharacterInfo">
+    <Position X="0.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQQIAAQBECgQyAAAAAAASAgAICIAAAAEIASAUAAAA=</HashCode>
+      <FileName>CharacterInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Guess_Who_Harry_Potter.Form1" Collapsed="true">
+    <Position X="2.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAACAAABAAAACAAAACAAAAAAAAAAUAAIBAAAA=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Guess_Who_Harry_Potter.frmChooseQuestion">
+    <Position X="4.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QCgAAACAAiAAABAAAACAAADC8A9MCAAAAEQAAARggAI=</HashCode>
+      <FileName>frmChooseQuestion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Guess_Who_Harry_Potter.frmConnect" Collapsed="true">
+    <Position X="6" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAACAAAAAAAACAAOACIBAAAAAAAIAAAAAgAAQ=</HashCode>
+      <FileName>frmConnect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Guess_Who_Harry_Potter.playBoard">
+    <Position X="7.75" Y="1.5" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="Guess_Who_Harry_Potter.playBoard.deleForm" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>playBoard.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>MGCIBAIAiCAAAgIQAADAACBSCACBGwCAhQAAARFDBwg=</HashCode>
+      <FileName>playBoard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Guess_Who_Harry_Potter.Player">
+    <Position X="0.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAgAAAEIgAAAQAAAAACQAAAAkAAAQAA=</HashCode>
+      <FileName>Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Guess_Who_Harry_Potter.Program" Collapsed="true">
+    <Position X="2.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Guess_Who_Harry_Potter.Question" Collapsed="true">
+    <Position X="4.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Question.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Guess_Who_Harry_Potter.Rules" Collapsed="true">
+    <Position X="7.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAACAAAAcAAACAAAAKAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rules.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Guess_Who_Harry_Potter.ServerData">
+    <Position X="0.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAgAEAAgAAAAgAAIQAAAACAAEAAAAAAAABA=</HashCode>
+      <FileName>ServerData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Guess_Who_Harry_Potter.Properties.Resources" Collapsed="true">
+    <Position X="6" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAEAAAKAIMIHgECAQAQBkgATAQSSQgC+//9hAQIADYA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Guess_Who_Harry_Potter.Properties.Settings" Collapsed="true">
+    <Position X="2.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Guess_Who_Harry_Potter.EyeColor" Collapsed="true">
+    <Position X="0.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAAAABgA=</HashCode>
+      <FileName>CharacterInfo.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Guess_Who_Harry_Potter.HairColor" Collapsed="true">
+    <Position X="4.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAQAAAACIAAAAAQAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>CharacterInfo.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Guess_Who_Harry_Potter.Gender" Collapsed="true">
+    <Position X="2.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>CharacterInfo.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Guess_Who_Harry_Potter.House" Collapsed="true">
+    <Position X="0.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAQAAAAAABAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CharacterInfo.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Guess_Who_Harry_Potter.HairLength" Collapsed="true">
+    <Position X="6" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CharacterInfo.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Guess_Who_Harry_Potter.HairType" Collapsed="true">
+    <Position X="7.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IACAAAAAAAAAAAAAAACAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CharacterInfo.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
