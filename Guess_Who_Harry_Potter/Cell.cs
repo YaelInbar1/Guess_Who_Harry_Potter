@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+ 
 namespace Guess_Who_Harry_Potter
 {
     class Cell //: CharacterInfo //לכל תא יש את המאיפיינים של המחלקה
