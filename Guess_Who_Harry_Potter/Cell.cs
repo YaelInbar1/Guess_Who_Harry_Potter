@@ -16,7 +16,7 @@ namespace Guess_Who_Harry_Potter
         Image backimg;
         Image img;
         string info;
-        //int indx;
+        int indx;
 
         Board b;
         public Image Backimg { get => backimg; set => backimg = value; }
