@@ -39,7 +39,8 @@ namespace Guess_Who_Harry_Potter
                     {                        
                         string r = board.allC[i, j].CellPic1.Tag.ToString().Split(' ')[1];
                         int tagtag = int.Parse(r);                    
-                        sendMyGessToServer(tagtag);                                                
+                        sendMyGessToServer(tagtag);
+                        break;
                     }                    
                 }
             }

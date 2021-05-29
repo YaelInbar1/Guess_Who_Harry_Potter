@@ -44,10 +44,16 @@ namespace Guess_Who_Harry_Potter
            
         }
 
+        public static int TpicP1;
+        public static int TpicP2;
+
+        public static int tpic1Q;
+        public static int tpic2Q;
+
         int myPlayerNumbr;
         CharacterInfo myCharacret;
         string[] splitstr;
-
+        
         public void MyProtocol()
         {
             string s;
@@ -79,6 +85,8 @@ namespace Guess_Who_Harry_Potter
                             myCharacret = characters.myRandomChar();
                             picBoxPlayer1.Image = characters.MyPic(myCharacret.NumInArr1);
                             picBoxPlayer1.Tag= (int)characters.picplay;
+                            TpicP1 = (int)characters.picplay;
+                            tpic1Q= (int)characters.picplay;
                             picBoxPlayer2.Image = Properties.Resources.QMark;
                         }
                         else
@@ -87,6 +95,8 @@ namespace Guess_Who_Harry_Potter
                             myCharacret = characters.myRandomChar();
                             picBoxPlayer2.Image = characters.MyPic(myCharacret.NumInArr1);
                             picBoxPlayer2.Tag = (int)characters.picplay;
+                            TpicP2 = (int)characters.picplay;
+                            tpic2Q = (int)characters.picplay;
                             picBoxPlayer1.Image = Properties.Resources.QMark;
                         }
                         lblCorrentPlayer.Text = lblPlayer1.Text;
@@ -118,33 +128,23 @@ namespace Guess_Who_Harry_Potter
                         MessageBox.Show(splitstr[1] + " anserd " + splitstr[2]);
                         break;
                 case '*':
+                    //Console.WriteLine(picBoxPlayer2.Image);
                     s = firstCharInfoRes.Substring(1);
-                    senttag = int.Parse(s); // tag of the sent pic  
-                    if (picBoxPlayer2.Image.Equals(Properties.Resources.QMark))  // means that you are player 1 
+                    Bitmap question_mark = Properties.Resources.QMark;
+                    question_mark.Tag = 44;
+                    if (TpicP2 == 0)
                     {
-                        if (picBoxPlayer2.Tag != null)
-                        {
-                            if (senttag == (int)picBoxPlayer2.Tag)
+                        TpicP2 = 44;
+                    }
+                    else
+                        tpic1Q = 44;
+                    senttag = int.Parse(s); // tag of the sent pic  
+                                            
+                            if (senttag == TpicP2)
                             {
                                 // a window jumps that indicates that he is a winner 
                                 sd.WriteToServer("l2");
-                            }
-                        }
-                    }
-                    else
-                    {
-                        if(picBoxPlayer1.Image.Equals(Properties.Resources.QMark))  // means that you are player 2 
-                        {
-                            if (picBoxPlayer1.Tag != null)
-                            {
-                                if (senttag == (int)picBoxPlayer1.Tag) // means that you are player 2 
-                                {
-                                    // a window jumps that indicates that he is a winner 
-                                    sd.WriteToServer("l1");
-                                }
-                            }
-                        }
-                    }
+                            }                                                                                  
                     break;
                 case 'l':
                     s = firstCharInfoRes.Substring(1);     // who lost               
@@ -159,10 +159,46 @@ namespace Guess_Who_Harry_Potter
                             var newForm = new Win();
                             newForm.Show();
                         }
-                    break; 
+                    break;
+                case '%':
+                    s = firstCharInfoRes.Substring(1);
+                    Bitmap questionmark = Properties.Resources.QMark; //change name
+                    questionmark.Tag = 44;
+                    if (TpicP2 == 0)
+                    {
+                        TpicP2 = 44;
+                    }
+                    else
+                        tpic1Q = 44;
+                    senttag = int.Parse(s); // tag of the sent pic 
 
+                    if (senttag == TpicP1) // means that you are player 2 
+                    {
+                        // a window jumps that indicates that he is a winner 
+                        sd.WriteToServer("l1");
+                    }
+                    break;
             }
         }
+
+        //private bool Equals22(Image bmp1, Bitmap bmp2)
+        //{
+            //if (!bmp1.Size.Equals(bmp2.Size))
+            //{
+                //return false;
+            //}
+            //for (int x = 0; x < bmp1.Width; ++x)
+            //{
+                //for (int y = 0; y < bmp1.Height; ++y)
+                //{
+                    //if (bmp1.GetPixel(x, y) != bmp2.GetPixel(x, y))
+                    //{
+                        //return false;
+                    //}
+                //}
+            //}
+            //return true;
+        //}
 
         string ans;
         private bool CheckIfTrue(int pictag)
@@ -189,7 +225,14 @@ namespace Guess_Who_Harry_Potter
 
         internal void sendguesstoserver(int info)
         {
-            sd.WriteToServer("*" + info.ToString());
+            if (picBoxPlayer2.Image == Properties.Resources.QMark) //you are player 1
+            {
+                sd.WriteToServer("*" + info.ToString());
+            }
+            else
+                sd.WriteToServer("%" + info.ToString());
+
+
         }
 
         private void lblPlayer1_Click(object sender, EventArgs e)
@@ -264,11 +307,13 @@ namespace Guess_Who_Harry_Potter
             sd.WriteToServer("#" + UserName + " : " + txtMess.Text + "\n");
         }
 
+       
+
         //private void allC_Click(object sender, EventArgs e)
         //{
-            //PictureBox c;
-            //string place1 = " ", place2 = " ";
-            //c = (PictureBox)sender; MessageBox.Show("name: " + c.Tag + "\n" + "color: " + color);
+        //PictureBox c;
+        //string place1 = " ", place2 = " ";
+        //c = (PictureBox)sender; MessageBox.Show("name: " + c.Tag + "\n" + "color: " + color);
         //}
     }
     
