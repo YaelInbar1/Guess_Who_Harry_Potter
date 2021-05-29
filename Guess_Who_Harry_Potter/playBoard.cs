@@ -52,7 +52,7 @@ namespace Guess_Who_Harry_Potter
         {
             string s;
             firstCharInfoRes = mess.Substring(0);
-            int senttag; 
+            int senttag;            
             switch (firstCharInfoRes[0])
             {// חלק זה יתבצע כל פעם שיתחבר לקוח חדש ואז נמחקת  רשימת המשתמשים שאונליין והיא נבנית מחדש 
                 case '@':
@@ -78,14 +78,16 @@ namespace Guess_Who_Harry_Potter
                             myPlayerNumbr = 1;
                             myCharacret = characters.myRandomChar();
                             picBoxPlayer1.Image = characters.MyPic(myCharacret.NumInArr1);
-                            picBoxPlayer2.Image = Properties.Resources.a;
+                            picBoxPlayer1.Tag= (int)characters.picplay;
+                            picBoxPlayer2.Image = Properties.Resources.QMark;
                         }
                         else
                         {
                             myPlayerNumbr = 2;
                             myCharacret = characters.myRandomChar();
                             picBoxPlayer2.Image = characters.MyPic(myCharacret.NumInArr1);
-                            picBoxPlayer1.Image = Properties.Resources.a;
+                            picBoxPlayer2.Tag = (int)characters.picplay;
+                            picBoxPlayer1.Image = Properties.Resources.QMark;
                         }
                         lblCorrentPlayer.Text = lblPlayer1.Text;
                     }
@@ -118,34 +120,45 @@ namespace Guess_Who_Harry_Potter
                 case '*':
                     s = firstCharInfoRes.Substring(1);
                     senttag = int.Parse(s); // tag of the sent pic  
-                    if (picBoxPlayer2.Equals(Properties.Resources.a))  // means that you are player 1 
+                    if (picBoxPlayer2.Image.Equals(Properties.Resources.QMark))  // means that you are player 1 
                     {
-                        if (senttag == (int)picBoxPlayer2.Tag)
+                        if (picBoxPlayer2.Tag != null)
                         {
-                            // a window jumps that indicates that he is a winner 
-                            sd.WriteToServer("l2");
+                            if (senttag == (int)picBoxPlayer2.Tag)
+                            {
+                                // a window jumps that indicates that he is a winner 
+                                sd.WriteToServer("l2");
+                            }
                         }
-                        
                     }
                     else
-                        if (senttag == (int)picBoxPlayer1.Tag) // means that you are player 2 
                     {
-                        // a window jumps that indicates that he is a winner 
-                        sd.WriteToServer("l1");
+                        if(picBoxPlayer1.Image.Equals(Properties.Resources.QMark))  // means that you are player 2 
+                        {
+                            if (picBoxPlayer1.Tag != null)
+                            {
+                                if (senttag == (int)picBoxPlayer1.Tag) // means that you are player 2 
+                                {
+                                    // a window jumps that indicates that he is a winner 
+                                    sd.WriteToServer("l1");
+                                }
+                            }
+                        }
                     }
-                    
                     break;
                 case 'l':
-                    s = firstCharInfoRes.Substring(1);
-                    if (s.Equals("1")) // means that player one lost
-                    {
-                        // screen that indicates that player 1 lost 
-                    }
-                    else
-                    {
-                        // screen that indicates that player 1 lost 
-                    }
-
+                    s = firstCharInfoRes.Substring(1);     // who lost               
+                        //screens that indicates to who lost / won
+                        if (myPlayerNumbr.ToString().Equals(s))
+                        {
+                            var newForm = new Lose();
+                            newForm.Show();
+                        }
+                        else //
+                        {
+                            var newForm = new Win();
+                            newForm.Show();
+                        }
                     break; 
 
             }
@@ -154,7 +167,7 @@ namespace Guess_Who_Harry_Potter
         string ans;
         private bool CheckIfTrue(int pictag)
         {
-            
+            return true; //***********
         }
         internal void showAndSendQ(string qChosen)
         {
@@ -176,8 +189,7 @@ namespace Guess_Who_Harry_Potter
 
         internal void sendguesstoserver(int info)
         {
-           //**********************************************************************************************************************
-
+            sd.WriteToServer("*" + info.ToString());
         }
 
         private void lblPlayer1_Click(object sender, EventArgs e)
@@ -209,7 +221,7 @@ namespace Guess_Who_Harry_Potter
         }
         private void btnGuess_Click(object sender, EventArgs e)
         {
-            var newForm = new ChoseGuess();
+            var newForm = new ChoseGuess(this);
             newForm.Show();
         }
 

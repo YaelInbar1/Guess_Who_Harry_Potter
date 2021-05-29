@@ -44,10 +44,10 @@ namespace Guess_Who_Harry_Potter
             allchar[23] = new CharacterInfo("Sybill Trelawney", Properties.Resources.Trelawney, EyeColor.blue, HairColor.brown, false, true, true, Gender.girl, House.Ravenclaw, true, false, false, true, true, false, false, false, false, HairLength.longhair, false, HairType.Curly,23);
         }
         Random rnd = new Random();
+        public int picplay;
         public CharacterInfo myRandomChar()
-        {          
-            int picplay;
-            picplay = rnd.Next(0, 24);
+        {                      
+            picplay = rnd.Next(0, 24);        
             return allchar[picplay];
         }
 

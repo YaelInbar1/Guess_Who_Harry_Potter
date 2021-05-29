@@ -17,6 +17,7 @@ namespace Guess_Who_Harry_Potter
         Image img;
         string info;
         int indx;
+        public bool lastone = false;
 
         Board b;
         public Image Backimg { get => backimg; set => backimg = value; }
@@ -35,13 +36,14 @@ namespace Guess_Who_Harry_Potter
             CellPic1.BorderStyle = BorderStyle.Fixed3D;
             CellPic1.Tag = 1 + " " + j;
             CellPic1.Click += CellPic1_Click;
+
         }
 
         private void CellPic1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show(info+" ");
+        {            
+            MessageBox.Show(info + " ");
             //b.sendMyGessToServer(indx);
-
+            //indx = (PictureBox)sender.Tag;
         }
 
         public Cell(int x,int y, int i, int j, Image img,int CARNum, Board b, CharacterInfo information)
@@ -62,5 +64,10 @@ namespace Guess_Who_Harry_Potter
 
         }
 
+        public override string ToString()
+        {
+            
+            return "" + this.CellPic1.Tag;
+        }
     }
 }

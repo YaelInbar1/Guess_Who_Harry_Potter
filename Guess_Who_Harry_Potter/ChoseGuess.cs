@@ -12,11 +12,13 @@ namespace Guess_Who_Harry_Potter
 {
     public partial class ChoseGuess : Form
     {
-        public ChoseGuess()
+        public ChoseGuess(playBoard Meaw)
         {
             InitializeComponent();
+            pbfrm = Meaw;
         }
 
+        playBoard pbfrm;
         Board board;
         AllCar characters;
         public int pictag ; 
@@ -28,18 +30,24 @@ namespace Guess_Who_Harry_Potter
         }
 
         public void btnChosen_Click(object sender, EventArgs e)
-        { 
-            
-            
-            //להגדיר דמות של שחקן 1 ודמות של שחקן 2 ולעשות קייסים
-            if (true)// אם השחקן בחר את הדמות של השחקן השני אז מסך ניצחת
+        {            
+            for (int i = 0; i < board.allC.GetLength(0); i++)
             {
-
+                for (int j = 0; j < board.allC.GetLength(1); j++)
+                {
+                    if (board.allC[i, j].lastone)
+                    {                        
+                        string r = board.allC[i, j].CellPic1.Tag.ToString().Split(' ')[1];
+                        int tagtag = int.Parse(r);                    
+                        sendMyGessToServer(tagtag);                                                
+                    }                    
+                }
             }
-            else // אחרת יופיע מסך הפסדת
-            {
+        }
 
-            }
+        internal void sendMyGessToServer(int info)
+        {
+            pbfrm.sendguesstoserver(info);
         }
     }
 }
